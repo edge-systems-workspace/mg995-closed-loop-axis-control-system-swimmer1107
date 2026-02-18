@@ -60,6 +60,18 @@ void setup() {
   pinMode(trg_pin, OUTPUT);
   pinMode(ech_pin, INPUT);
 
+/**
+ * @brief Main control loop.
+ *
+ * @details
+ * - Sends trigger pulse to ultrasonic sensor.
+ * - Measures echo duration.
+ * - Calculates distance in centimeters.
+ * - Rotates servo to 180° if object ≤ 15 cm.
+ * - Otherwise sets servo to 0°.
+ * - Prints distance on Serial Monitor.
+ */
+
   myservo.attach(5);   ///< Attach servo to digital pin 5
 
   Serial.begin(9600);
