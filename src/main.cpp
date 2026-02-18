@@ -35,3 +35,33 @@
  * 3. Calculate distance using speed of sound.
  * 4. Rotate servo based on threshold distance (15 cm).
  */
+
+#include <Servo.h>
+
+/** @brief Servo motor object */
+Servo myservo;
+
+/** @brief Ultrasonic trigger pin */
+int trg_pin = 9;
+
+/** @brief Ultrasonic echo pin */
+int ech_pin = 10;
+
+
+/**
+ * @brief System initialization routine.
+ *
+ * Initializes:
+ * - Ultrasonic sensor pins
+ * - Servo motor attachment
+ * - Serial communication (9600 baud)
+ */
+void setup() {
+  pinMode(trg_pin, OUTPUT);
+  pinMode(ech_pin, INPUT);
+
+  myservo.attach(5);   ///< Attach servo to digital pin 5
+
+  Serial.begin(9600);
+}
+
